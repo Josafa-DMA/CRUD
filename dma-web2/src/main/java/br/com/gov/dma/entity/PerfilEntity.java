@@ -43,7 +43,7 @@ public class PerfilEntity implements Serializable {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-
+//*******************************************************ATRIBUTOS DE USUARIO AQUI**************
 	public List<UsuarioEntity> getUsuarios() {
 		return this.usuarios;
 	}
