@@ -1,0 +1,63 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:head>
+	
+	</h:head>
+
+	<h:body>
+	
+		<p:linkButton outcome="index" value="Voltar"
+			style="margin-right:20px;">
+		</p:linkButton>
+		
+		<br/>
+		
+		<h:form>
+			<p:messages id="messages" />
+			
+			<p:panelGrid columns="2"
+				columnClasses="ui-grid-col-2,ui-grid-col-4,ui-grid-col-2,ui-grid-col-4"
+				layout="grid" styleClass="ui-panelgrid-blank ui-fluid"
+				style="border:0px none; background-color:transparent;">
+	
+				<p:row styleClass="my-heading-row">
+					<strong>Novo Usuário</strong>
+				</p:row>
+	
+				<p:outputLabel for="@next" value="Nome" />
+				<p:inputText value="#{UsuarioController.novoUsuario.name}"/>
+	
+				<p:outputLabel for="@next" value="CPF" />
+				<p:inputText value="#{UsuarioController.novoUsuario.cpf}" maxlength="11"/>
+				
+				<p:outputLabel for="@next" value="Email" />
+				<p:inputText value="#{UsuarioController.novoUsuario.email}"/>
+	
+				<p:outputLabel for="@next" value="Perfil" />
+				<p:selectOneMenu id="optionPerfil" value="#{UsuarioController.novoUsuario.perfil.id}">
+                    <f:selectItem itemLabel="Admin" itemValue="1"/>
+                    <f:selectItem itemLabel="Usuário" itemValue="2"/>
+                </p:selectOneMenu>
+                
+                <p:row styleClass="my-heading-row">
+					<strong>Endereço:</strong>
+				</p:row>
+				
+				<p:outputLabel for="@next" value="Logradouro" />
+				<p:inputText/>
+				
+				<p:outputLabel for="@next" value="CEP" />
+				<p:inputText/>
+	
+			</p:panelGrid>
+			
+			<p:commandButton value="Salvar"
+				action="#{UsuarioController.cadastrarNovoUsuario}" ajax="false">
+			</p:commandButton>
+
+		</h:form>
+	</h:body>
+</html>

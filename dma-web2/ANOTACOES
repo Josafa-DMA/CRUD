@@ -1,0 +1,13 @@
+TransactionRequiredException
+IllegalArgumentException
+EntityExistsException
+
+
+//    CONSULTA COM JPQO SOLICITADA	
+	
+    @SuppressWarnings("unchecked")
+	public List<UsuarioEntity> findAll(){
+				EntityManager em = getEntityManager();
+			return em.createQuery("FROM" + 
+					UsuarioEntity.class.getName()).getResultList();
+	}
